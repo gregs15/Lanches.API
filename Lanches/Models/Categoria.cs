@@ -14,9 +14,9 @@ namespace Lanches.Models
         [Display(Name ="Nome")]
         public string CategoriaNome { get; set; }
 
-        [StringLength(200, ErrorMessage = "O tamanho máximo é 100 caracteres")]
+        [StringLength(200, ErrorMessage = "O tamanho máximo é 200 caracteres")]
         [Required(ErrorMessage = "Informe a descricao da categoria")]
-        [Display(Name = "Nome")]
+        [Display(Name = "Descriçao")]
         public string Descricao { get; set; }
 
 

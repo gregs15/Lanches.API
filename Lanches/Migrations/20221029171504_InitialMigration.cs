@@ -31,7 +31,7 @@ namespace Lanches.Migrations
                     Nome = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
                     DescricaoCurta = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     DescricaoDetalhada = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Preco = table.Column<decimal>(type: "decimal(10,2", nullable: false),
+                    Preco = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     ImagemUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     ImagemThumbnailUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     IsLanchePreferido = table.Column<bool>(type: "bit", nullable: false),
