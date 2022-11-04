@@ -1,4 +1,6 @@
 ﻿using Lanches.Context;
+using Lanches.Repositories;
+using Lanches.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lanches;
@@ -17,6 +19,8 @@ public class Startup
     {
         services.AddControllersWithViews();
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LanchesCs")));
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
