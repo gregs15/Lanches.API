@@ -22,6 +22,7 @@ public class Startup
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LanchesCs")));
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+        services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
         services.AddMemoryCache();
