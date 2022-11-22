@@ -45,7 +45,7 @@ namespace Lanches.Controllers
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(p => p.LancheId == lancheId);
             if (lancheSelecionado != null)
             {
-                _carrinhoCompra.RemoverCarrinho(lancheSelecionado);
+                _carrinhoCompra.RemoverDoCarrinho(lancheSelecionado);
 
             }
             

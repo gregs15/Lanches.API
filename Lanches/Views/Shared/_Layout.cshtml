@@ -6,10 +6,9 @@
     <title>@ViewData["Title"] - Lanches</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Lanches.styles.css" asp-append-version="true" />
 </head>
 <body>
-     <header>
+    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
@@ -21,16 +20,14 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     @await Component.InvokeAsync("CarrinhoCompraResumo")
-                     @await Component.InvokeAsync("CategoriaMenu")
-                    
-                   @* <a class="nav-link text-light" asp-area="" asp-controller="Lanche" asp-action="List">Lanches</a>*@
-                     <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                     <a class="nav-link text-light" asp-area="" asp-controller="Contato" asp-action="Index">Contato</a>
-                     <form class= "navbar - from navbar-right" asp-controller="Lanche" asp-action="Search" method="get">
-                         <div class="form-group">
-                             <input type="text" class="form-control" placeholder="Procurar produto" name="searchString" value = "@ViewData["searchString"]" >
-                         </div>
-                     </form>
+                    @await Component.InvokeAsync("CategoriaMenu")
+                    <a class="nav-link text-light" asp-area="" asp-controller="Contato" asp-action="Index">Contato</a>
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <form class="navbar-form navbar-right" asp-controller="Lanche" asp-action="Search" method="get">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Procurar produto" name="searchString" value="@ViewData["searchString"]">
+                      </div>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -43,7 +40,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Lanches - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Lanches
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
