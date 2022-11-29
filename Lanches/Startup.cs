@@ -2,6 +2,7 @@
 using Lanches.Models;
 using Lanches.Repositories;
 using Lanches.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lanches;
@@ -20,6 +21,9 @@ public class Startup
     {
         services.AddControllersWithViews();
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LanchesCs")));
+        services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();
@@ -47,7 +51,7 @@ public class Startup
         app.UseStaticFiles();
 
         app.UseRouting();
-
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
